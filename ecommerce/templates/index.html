@@ -2,4 +2,14 @@
 {% block title %}Home{% endblock title %}
 {% block body %}
 <h1>This is Home bro</h1>
+<form action="/auth/signup/" method="post">{% csrf_token %} 
+    {% comment %} csrf token is a unique token generated while logging in, it is for security purpose {% endcomment %}
+    <label for="un">UserName :</label> <br>
+    <input type="text" id="un" name = "username"> <br>
+    <label for="pw1">Password :</label> <br>
+    <input type="password" id="pw1" name="password"> <br>
+    <label for="pw2">Confirm Password :</label> <br>
+    <input type="password" id="pw2" name="confirm_password"> <br>
+    <button type="submit">Login</button>
+</form>
 {% endblock body %}
